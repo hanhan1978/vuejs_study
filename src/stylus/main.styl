@@ -1,0 +1,42 @@
+html
+  font-size : 10px 
+
+body
+  color: #333
+  font-size : 1.8rem
+  font-family: Lato,'游ゴシック体', 'Yu Gothic', YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+
+*, *::before, *::after
+  box-sizing: border-box
+
+clearfix()
+  &:after
+    content: "" 
+    display: block 
+    height: 0 
+    font-size:0  
+    clear: both 
+    visibility:hidden
+
+.feed
+  background #eee
+  border-radius 5px
+  width 340px
+  dl
+    margin 0
+    padding 10px 0 0 10px 
+    clearfix()
+    dt
+      img
+        width 60px
+        border-radius 30%
+      float left
+    dd
+      margin-top 5px
+      margin-left 10px
+      width 250px
+      height 2.4em
+      line-height 1.2em
+      overflow hidden
+      word-break break-all
+      float left

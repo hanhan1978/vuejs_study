@@ -1,0 +1,34 @@
+extends _layout
+
+
+block contents
+  //
+  #app0
+    p {{ message }} 
+    input(v-model='message')
+
+  #app1
+    ul
+      li(v-for='todo in todos') {{todo.text}}
+
+  #app2
+    p {{ message }}
+    button(v-on:click='reverseMessage') Reverse Message
+
+  #app
+    input(v-model='newTodo' v-on:keyup.enter='addTodo')
+    ul
+      li(v-for='todo in todos')
+        span {{ todo.text }}
+        button(v-on:click='removeTodo($index)') X
+  #feed__cat.feed
+    dl(v-for='feed in feeds')
+      dt
+        img(src='{{feed.image}}')
+      dd
+        a(href='{{feed.url}}') {{feed.text}}
+
+
+block scripts
+  script(src='js/main.js')
+  script(src='js/feed.js')
